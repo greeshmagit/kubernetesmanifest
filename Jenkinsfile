@@ -5,8 +5,8 @@ pipeline{
       script{
         catchError(buildResult: 'SUCCESS', stageResult: 'Failure'){
            withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USSERNAME')]) {
-             sh "git config user.email greeshmapotugari@gmail.com"
-             sh "git config user.name greeshmagit"
+             sh "git config user.email greeshma.productiva@gmail.com"
+             sh "git config user.name greeshma"
              sh "cat deployment.yaml"
              sh "sed -i 's+pgreeshma/welpython.*+pgreeshma/welpython:${DOCKERTAG}+g' deployment.yaml"
              sh "cat deployment.yaml"
