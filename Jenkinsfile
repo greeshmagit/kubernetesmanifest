@@ -1,5 +1,6 @@
 pipeline{
   def app
+  agent any
   stages{
     stage("update GIT"){
       script{
